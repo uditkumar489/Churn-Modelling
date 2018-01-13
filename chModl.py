@@ -42,3 +42,23 @@ from sklearn.preprocessing import StandardScaler
 sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
+
+
+
+"""
+Making Artificial Neural Network
+"""
+# Keras libraries and packages imported
+import keras
+from keras.models import Sequential
+from keras.layers import Dense
+
+classifier = Sequential() #initialising
+
+classifier.add(Dense(output_dim = 6, init = 'uniform', activation = 'relu', input_dim = 11)) #input layer + first hidden layer
+
+classifier.add(Dense(output_dim = 1, init = 'uniform', activation = 'sigmoid')) #output layer
+
+classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy']) #compiling
+
+classifier.fit(X_train, y_train, batch_size = 10, nb_epoch = 100) #fitting to dataset
