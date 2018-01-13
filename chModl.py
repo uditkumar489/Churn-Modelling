@@ -21,6 +21,7 @@ import pandas as pd
 # The dataset 
 dataset = pd.read_csv('Churn_Dataset.csv')
 X = dataset.iloc[:, 3:13].values
+
 y = dataset.iloc[:, 13].values
 
 # Categorical data Encoded
@@ -56,6 +57,9 @@ from keras.layers import Dense
 classifier = Sequential() #initialising
 
 classifier.add(Dense(output_dim = 6, init = 'uniform', activation = 'relu', input_dim = 11)) #input layer + first hidden layer
+
+# Adding the second hidden layer (IMPORVEMENT)
+classifier.add(Dense(output_dim = 6, init = 'uniform', activation = 'relu'))
 
 classifier.add(Dense(output_dim = 1, init = 'uniform', activation = 'sigmoid')) #output layer
 
