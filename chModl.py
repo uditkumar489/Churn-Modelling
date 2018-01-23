@@ -58,7 +58,7 @@ classifier = Sequential() #initialising
 
 classifier.add(Dense(output_dim = 6, init = 'uniform', activation = 'relu', input_dim = 11)) #input layer + first hidden layer
 
-# Adding the second hidden layer (imporvementIMPROVEMENT)
+# Adding the second hidden layer (IMPROVEMENT)
 classifier.add(Dense(output_dim = 6, init = 'uniform', activation = 'relu'))
 
 classifier.add(Dense(output_dim = 1, init = 'uniform', activation = 'sigmoid')) #output layer
